@@ -1,0 +1,17 @@
+// Set Text Color
+// This calls for the background-color, I wonder if this still works when I use command background instead
+@function set-text-color($color) {
+    @if(lightness($color) > 50) {
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}
+
+// Transform mixin
+@mixin transform($property) {
+    // Below first two ensure that this works on all browsers
+    // --webkit-transform: $property;
+    // -ms-transform: $property;
+    transform: $property;
+}
